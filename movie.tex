@@ -1,0 +1,1092 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\author{}
+\date{\vspace{-2.5em}}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\begin{document}
+
+\hypertarget{analysis-of-movies-in-r-from-year-1960-2020}{%
+\section{\texorpdfstring{\textbf{Analysis Of Movies In R From Year
+1960-2020}}{Analysis Of Movies In R From Year 1960-2020}}\label{analysis-of-movies-in-r-from-year-1960-2020}}
+
+\hypertarget{by-simran-kaur}{%
+\subsubsection{\texorpdfstring{\textbf{By Simran
+Kaur}}{By Simran Kaur}}\label{by-simran-kaur}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{\protect\hyperlink{intro}{Introduction}}\\
+\item
+  \textbf{\protect\hyperlink{data}{Data Cleaning}}\\
+\item
+  \textbf{\protect\hyperlink{stats}{Statistical Tests}}\\
+\item
+  \textbf{\protect\hyperlink{visual}{Visualizing the Data}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{\protect\hyperlink{uni}{Univariate analysis}}\\
+  \item
+    \textbf{\protect\hyperlink{bi}{Bivariate Analysis}}
+  \item
+    \textbf{\protect\hyperlink{smooth}{Smooth Line}}\\
+  \item
+    \textbf{\protect\hyperlink{box}{BoxPlot}}\\
+  \end{itemize}
+\item
+  \textbf{\protect\hyperlink{conclusion}{Conclusions from the Graphs}}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \textbf{\protect\hyperlink{q1}{Which release years had the most
+    number of movies shot?}}
+  \item
+    \textbf{\protect\hyperlink{q2}{Which are the most famous locations
+    to shoot a movie?}}
+  \item
+    \textbf{\protect\hyperlink{q3}{Which directors shot the most number
+    of movies?}}
+  \item
+    \textbf{\protect\hyperlink{q4}{Who are the top ten directors with
+    best movie ?}}
+  \item
+    \textbf{\protect\hyperlink{q5}{What are the Most Liked Genre among
+    Movies?}}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{intro}{%
+\subsection{\texorpdfstring{\textbf{Introduction}}{Introduction}}\label{intro}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+This dataset consist of list of curated set of movies for our analysis
+from the year 1940s to 2020. Let us analyse this data to answer
+questions like which director released most of the movies, which is the
+highest rated movie, which genre is liked by the audience , which movie
+has highest IMDb score etc.
+
+\textbf{Packages used}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'tidyr' was built under R version 4.1.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 4.1.3
+\end{verbatim}
+
+\textbf{Loading the Data and Summary }
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mov}\OtherTok{\textless{}{-}}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/simra/Desktop/movie\_analysis{-}main/MoviesOnStreamingPlatforms.csv"}\NormalTok{)}
+\FunctionTok{summary}\NormalTok{(mov)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X               ID           Title                Year     
+##  Min.   :  0.0   Min.   :  1.0   Length:938         Min.   :1946  
+##  1st Qu.:234.2   1st Qu.:237.2   Class :character   1st Qu.:2010  
+##  Median :468.5   Median :471.5   Mode  :character   Median :2016  
+##  Mean   :468.5   Mean   :471.2                      Mean   :2012  
+##  3rd Qu.:702.8   3rd Qu.:705.8                      3rd Qu.:2018  
+##  Max.   :937.0   Max.   :940.0                      Max.   :2020  
+##       IMDb       Rotten.Tomatoes       Netflix       Hulu        
+##  Min.   :5.000   Length:938         Min.   :1   Min.   :0.00000  
+##  1st Qu.:6.300   Class :character   1st Qu.:1   1st Qu.:0.00000  
+##  Median :6.900   Mode  :character   Median :1   Median :0.00000  
+##  Mean   :6.876                      Mean   :1   Mean   :0.01173  
+##  3rd Qu.:7.400                      3rd Qu.:1   3rd Qu.:0.00000  
+##  Max.   :8.800                      Max.   :1   Max.   :1.00000  
+##   Prime.Video         Disney.              Type    Directors        
+##  Min.   :0.00000   Min.   :0.000000   Min.   :0   Length:938        
+##  1st Qu.:0.00000   1st Qu.:0.000000   1st Qu.:0   Class :character  
+##  Median :0.00000   Median :0.000000   Median :0   Mode  :character  
+##  Mean   :0.07676   Mean   :0.006397   Mean   :0                     
+##  3rd Qu.:0.00000   3rd Qu.:0.000000   3rd Qu.:0                     
+##  Max.   :1.00000   Max.   :1.000000   Max.   :0                     
+##     Genres            Country            Language            Runtime     
+##  Length:938         Length:938         Length:938         Min.   : 26.0  
+##  Class :character   Class :character   Class :character   1st Qu.: 93.0  
+##  Mode  :character   Mode  :character   Mode  :character   Median :103.0  
+##                                                           Mean   :107.1  
+##                                                           3rd Qu.:118.0  
+##                                                           Max.   :224.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{glimpse}\NormalTok{(mov)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Rows: 938
+## Columns: 16
+## $ X               <int> 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, ~
+## $ ID              <int> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,~
+## $ Title           <chr> "Inception", "The Matrix", "Avengers: Infinity War", "~
+## $ Year            <int> 2010, 1999, 2018, 1985, 1966, 2018, 2002, 2012, 1981, ~
+## $ IMDb            <dbl> 8.8, 8.7, 8.5, 8.5, 8.8, 8.4, 8.5, 8.4, 8.4, 8.3, 8.3,~
+## $ Rotten.Tomatoes <chr> "87%", "87%", "84%", "96%", "97%", "97%", "95%", "87%"~
+## $ Netflix         <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ~
+## $ Hulu            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ Prime.Video     <int> 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, ~
+## $ Disney.         <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ Type            <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ Directors       <chr> "Christopher Nolan", "Lana Wachowski,Lilly Wachowski",~
+## $ Genres          <chr> "Action,Adventure,Sci-Fi,Thriller", "Action,Sci-Fi", "~
+## $ Country         <chr> "United States,United Kingdom", "United States", "Unit~
+## $ Language        <chr> "English,Japanese,French", "English", "English", "Engl~
+## $ Runtime         <int> 148, 136, 149, 116, 161, 117, 150, 165, 115, 153, 114,~
+\end{verbatim}
+
+\hypertarget{data}{%
+\section{\texorpdfstring{\textbf{Data
+Cleaning}}{Data Cleaning}}\label{data}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+From the dataset,it is easy to infer that some cleaning need to be done
+before we can decipher information.Lets do it first.
+
+\emph{Removing unnecessary columns}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mov}\OtherTok{\textless{}{-}}\NormalTok{mov[}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{7}\SpecialCharTok{:}\DecValTok{11}\NormalTok{)]  }
+\FunctionTok{summary}\NormalTok{(mov)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X               ID           Title                Year     
+##  Min.   :  0.0   Min.   :  1.0   Length:938         Min.   :1946  
+##  1st Qu.:234.2   1st Qu.:237.2   Class :character   1st Qu.:2010  
+##  Median :468.5   Median :471.5   Mode  :character   Median :2016  
+##  Mean   :468.5   Mean   :471.2                      Mean   :2012  
+##  3rd Qu.:702.8   3rd Qu.:705.8                      3rd Qu.:2018  
+##  Max.   :937.0   Max.   :940.0                      Max.   :2020  
+##       IMDb       Rotten.Tomatoes     Directors            Genres         
+##  Min.   :5.000   Length:938         Length:938         Length:938        
+##  1st Qu.:6.300   Class :character   Class :character   Class :character  
+##  Median :6.900   Mode  :character   Mode  :character   Mode  :character  
+##  Mean   :6.876                                                           
+##  3rd Qu.:7.400                                                           
+##  Max.   :8.800                                                           
+##    Country            Language            Runtime     
+##  Length:938         Length:938         Min.   : 26.0  
+##  Class :character   Class :character   1st Qu.: 93.0  
+##  Mode  :character   Mode  :character   Median :103.0  
+##                                        Mean   :107.1  
+##                                        3rd Qu.:118.0  
+##                                        Max.   :224.0
+\end{verbatim}
+
+\emph{Removing NA values}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mov}\OtherTok{\textless{}{-}}\NormalTok{mov }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{drop\_na}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{stats}{%
+\section{\texorpdfstring{\textbf{Statistical
+Tests}}{Statistical Tests}}\label{stats}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(mov)  }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        X               ID           Title                Year     
+##  Min.   :  0.0   Min.   :  1.0   Length:938         Min.   :1946  
+##  1st Qu.:234.2   1st Qu.:237.2   Class :character   1st Qu.:2010  
+##  Median :468.5   Median :471.5   Mode  :character   Median :2016  
+##  Mean   :468.5   Mean   :471.2                      Mean   :2012  
+##  3rd Qu.:702.8   3rd Qu.:705.8                      3rd Qu.:2018  
+##  Max.   :937.0   Max.   :940.0                      Max.   :2020  
+##       IMDb       Rotten.Tomatoes     Directors            Genres         
+##  Min.   :5.000   Length:938         Length:938         Length:938        
+##  1st Qu.:6.300   Class :character   Class :character   Class :character  
+##  Median :6.900   Mode  :character   Mode  :character   Mode  :character  
+##  Mean   :6.876                                                           
+##  3rd Qu.:7.400                                                           
+##  Max.   :8.800                                                           
+##    Country            Language            Runtime     
+##  Length:938         Length:938         Min.   : 26.0  
+##  Class :character   Class :character   1st Qu.: 93.0  
+##  Mode  :character   Mode  :character   Median :103.0  
+##                                        Mean   :107.1  
+##                                        3rd Qu.:118.0  
+##                                        Max.   :224.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##   5 5.1 5.2 5.3 5.4 5.5 5.6 5.7 5.8 5.9   6 6.1 6.2 6.3 6.4 6.5 6.6 6.7 6.8 6.9 
+##   2   1   2   6  10   7  16  15  22  17  23  35  41  45  50  40  43  32  45  49 
+##   7 7.1 7.2 7.3 7.4 7.5 7.6 7.7 7.8 7.9   8 8.1 8.2 8.3 8.4 8.5 8.7 8.8 
+##  46  39  49  43  49  34  40  27  20  15  17  16  18   5   9   7   1   2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{Year)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 1946 1966 1968 1971 1973 1975 1976 1978 1979 1980 1981 1982 1983 1984 1985 1986 
+##    1    1    2    1    1    1    1    1    3    2    3    1    1    3    1    2 
+## 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998 1999 2000 2001 2002 
+##    2    5    3    2    2    5    3    2    6    4    8    9    8    8   11   11 
+## 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2014 2015 2016 2017 2018 
+##   13    6   13   19   16   15   23   36   27   23   34   53   57   96  140  143 
+## 2019 2020 
+##   91   19
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb,mov}\SpecialCharTok{$}\NormalTok{Year)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      
+##       1946 1966 1968 1971 1973 1975 1976 1978 1979 1980 1981 1982 1983 1984
+##   5      0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.1    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.2    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.3    0    0    0    0    0    0    0    0    0    1    0    0    0    0
+##   5.4    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.5    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.6    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.7    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.8    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.9    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6      0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.1    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.2    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.3    0    0    0    0    0    0    0    0    0    1    0    0    0    0
+##   6.4    0    0    0    0    0    0    0    0    0    0    1    0    0    1
+##   6.5    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.6    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.7    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.8    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   6.9    0    0    1    0    0    0    0    0    0    0    0    0    0    0
+##   7      0    0    0    0    0    0    0    1    0    0    0    0    0    0
+##   7.1    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   7.2    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   7.3    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   7.4    1    0    0    0    0    0    0    0    0    0    0    1    0    0
+##   7.5    0    0    0    0    1    0    0    0    0    0    1    0    0    1
+##   7.6    0    0    0    0    0    0    0    0    0    0    0    0    0    1
+##   7.7    0    0    0    0    0    0    0    0    1    0    0    0    0    0
+##   7.8    0    0    0    1    0    0    0    0    0    0    0    0    0    0
+##   7.9    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8      0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.1    0    0    0    0    0    0    0    0    1    0    0    0    0    0
+##   8.2    0    0    0    0    0    1    0    0    1    0    0    0    1    0
+##   8.3    0    0    0    0    0    0    1    0    0    0    0    0    0    0
+##   8.4    0    0    0    0    0    0    0    0    0    0    1    0    0    0
+##   8.5    0    0    1    0    0    0    0    0    0    0    0    0    0    0
+##   8.7    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.8    0    1    0    0    0    0    0    0    0    0    0    0    0    0
+##      
+##       1985 1986 1987 1988 1989 1990 1991 1992 1993 1994 1995 1996 1997 1998
+##   5      0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.1    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.2    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.3    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.4    0    0    0    0    0    0    0    0    0    0    0    0    0    1
+##   5.5    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.6    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.7    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.8    0    0    0    0    0    0    0    0    0    0    1    0    0    0
+##   5.9    0    0    0    0    0    0    0    0    0    0    0    0    0    1
+##   6      0    0    0    1    0    0    0    0    0    0    0    1    0    0
+##   6.1    0    0    0    0    1    0    0    1    0    0    0    0    0    0
+##   6.2    0    0    0    1    0    0    0    0    1    0    0    0    0    1
+##   6.3    0    0    0    0    0    0    0    0    0    0    0    0    0    1
+##   6.4    0    1    0    0    0    0    0    0    0    0    0    1    0    0
+##   6.5    0    0    0    0    0    0    0    0    0    0    0    1    1    2
+##   6.6    0    0    0    1    0    0    0    1    0    1    2    0    1    0
+##   6.7    0    0    1    0    0    0    0    0    0    0    0    0    1    1
+##   6.8    0    0    0    1    0    0    0    0    0    0    1    0    0    0
+##   6.9    0    0    1    0    0    0    2    2    0    1    1    0    0    0
+##   7      0    0    0    0    0    0    0    0    0    0    0    0    1    0
+##   7.1    0    0    0    0    0    1    0    0    0    0    0    0    0    0
+##   7.2    0    0    0    0    0    0    0    1    0    0    1    0    2    0
+##   7.3    0    0    0    0    0    0    0    0    0    0    0    1    0    0
+##   7.4    0    0    0    0    0    1    0    0    0    0    0    0    0    1
+##   7.5    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   7.6    0    0    0    1    0    0    0    0    0    0    0    0    0    0
+##   7.7    0    0    0    0    0    0    0    0    0    0    0    0    1    0
+##   7.8    0    1    0    0    1    0    0    0    1    0    0    0    0    1
+##   7.9    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8      0    0    0    0    0    0    0    0    1    0    0    0    0    0
+##   8.1    0    0    0    0    0    0    0    0    0    0    0    0    1    0
+##   8.2    0    0    0    0    1    0    0    0    0    0    0    0    0    0
+##   8.3    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.4    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.5    1    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.7    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.8    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##      
+##       1999 2000 2001 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012
+##   5      0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.1    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   5.2    0    0    0    0    0    0    0    0    1    0    0    0    0    0
+##   5.3    0    0    1    0    0    0    0    0    0    0    0    0    0    0
+##   5.4    0    0    0    1    0    0    0    0    0    0    0    0    1    0
+##   5.5    0    0    0    0    1    0    0    0    0    0    0    0    0    0
+##   5.6    0    0    0    1    0    0    0    2    0    0    0    2    0    1
+##   5.7    0    0    0    0    1    0    1    1    0    0    1    1    1    1
+##   5.8    0    0    0    0    1    0    0    1    1    0    1    1    2    0
+##   5.9    1    0    0    0    0    0    1    1    0    0    0    1    0    0
+##   6      0    0    1    1    0    0    0    0    0    0    1    1    0    0
+##   6.1    0    2    1    1    0    0    0    2    1    1    0    0    0    1
+##   6.2    0    2    1    1    1    1    2    0    0    0    0    0    2    1
+##   6.3    0    0    0    0    1    0    0    0    1    0    2    2    1    1
+##   6.4    1    0    1    0    0    0    1    1    0    1    2    4    1    0
+##   6.5    0    0    1    0    0    0    1    0    0    2    1    3    0    1
+##   6.6    1    1    0    0    1    1    2    0    0    1    1    1    0    1
+##   6.7    0    2    0    0    0    0    0    1    2    0    1    1    0    0
+##   6.8    1    0    1    0    2    0    0    1    1    3    0    1    0    3
+##   6.9    0    0    0    1    0    0    0    3    0    1    0    0    0    0
+##   7      0    0    0    0    1    0    1    0    0    2    4    2    3    2
+##   7.1    0    0    0    1    0    1    0    0    0    0    2    1    2    0
+##   7.2    0    1    0    0    1    0    0    2    1    0    1    0    3    3
+##   7.3    1    0    0    0    0    0    2    0    1    0    0    0    1    1
+##   7.4    0    0    1    1    0    0    0    1    1    0    0    4    1    0
+##   7.5    0    0    0    0    0    1    0    1    2    0    0    4    2    1
+##   7.6    1    0    2    1    0    0    0    0    0    1    1    1    1    1
+##   7.7    0    0    0    1    1    1    0    0    1    0    0    1    2    1
+##   7.8    0    0    0    0    0    0    0    0    1    2    1    0    1    0
+##   7.9    0    0    0    0    1    0    1    0    0    0    2    0    2    0
+##   8      1    0    0    0    1    0    1    1    0    1    0    2    0    1
+##   8.1    0    0    1    0    0    0    0    0    0    0    0    0    1    1
+##   8.2    0    0    0    0    0    1    0    1    1    0    0    0    0    1
+##   8.3    0    0    0    0    0    0    0    0    0    0    1    0    0    0
+##   8.4    0    0    0    0    0    0    0    0    1    0    1    1    0    1
+##   8.5    0    0    0    1    0    0    0    0    0    0    0    1    0    0
+##   8.7    1    0    0    0    0    0    0    0    0    0    0    0    0    0
+##   8.8    0    0    0    0    0    0    0    0    0    0    0    1    0    0
+##      
+##       2013 2014 2015 2016 2017 2018 2019 2020
+##   5      0    0    0    0    0    2    0    0
+##   5.1    0    0    0    0    0    1    0    0
+##   5.2    0    0    0    0    1    0    0    0
+##   5.3    0    1    1    0    1    1    0    0
+##   5.4    0    0    1    2    0    3    1    0
+##   5.5    0    0    0    1    0    3    2    0
+##   5.6    2    0    0    2    3    2    1    0
+##   5.7    0    0    0    1    3    2    2    0
+##   5.8    0    1    1    1    2    5    4    0
+##   5.9    0    0    0    2    4    3    0    3
+##   6      1    0    3    1    2    5    3    2
+##   6.1    1    2    0    2    5    6    5    3
+##   6.2    0    3    2    5   13    1    2    1
+##   6.3    0    5    2    6   12    8    1    1
+##   6.4    1    6    2    3    9    6    5    2
+##   6.5    2    2    4    3    6    7    2    1
+##   6.6    1    1    3    3    8    9    2    0
+##   6.7    0    1    2    3    5    5    6    0
+##   6.8    1    5    1    4   11    5    2    1
+##   6.9    1    3    7    5    6   10    4    0
+##   7      1    4    2    2    6    6    7    1
+##   7.1    2    5    3    6    2    6    7    0
+##   7.2    2    2    3    5   10    5    5    1
+##   7.3    0    2    3   12    4    9    5    1
+##   7.4    4    0    3    4    6   11    7    1
+##   7.5    3    0    2    6    2    4    3    0
+##   7.6    3    1    3    4    7    6    5    0
+##   7.7    2    2    4    2    4    2    1    0
+##   7.8    1    0    1    4    1    2    0    1
+##   7.9    0    0    0    1    2    2    4    0
+##   8      4    1    1    0    1    0    1    0
+##   8.1    2    3    2    2    1    1    0    0
+##   8.2    0    1    0    2    3    2    2    0
+##   8.3    0    1    0    1    0    0    1    0
+##   8.4    0    1    1    1    0    1    0    0
+##   8.5    0    0    0    0    0    2    1    0
+##   8.7    0    0    0    0    0    0    0    0
+##   8.8    0    0    0    0    0    0    0    0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(}\FunctionTok{table}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb,mov}\SpecialCharTok{$}\NormalTok{Year))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Number of cases in table: 938 
+## Number of factors: 2 
+## Test for independence of all factors:
+##  Chisq = 2525.1, df = 1813, p-value = 2.085e-26
+##  Chi-squared approximation may be incorrect
+\end{verbatim}
+
+\textbf{p-value\textless0.05 : fails to provide any evidence}
+
+\hypertarget{quantile-for-number-of-movies-with-5-probability}{%
+\subsection{Quantile for number of movies with 5\%
+probability}\label{quantile-for-number-of-movies-with-5-probability}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb,}\FloatTok{0.05}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  5% 
+## 5.7
+\end{verbatim}
+
+\hypertarget{quantile-for-number-of-movies-with-an-interval-of-25-in-the-probabilities}{%
+\subsection{Quantile for number of movies with an interval of 25\% in
+the
+probabilities}\label{quantile-for-number-of-movies-with-an-interval-of-25-in-the-probabilities}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{quantile}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   0%  25%  50%  75% 100% 
+##  5.0  6.3  6.9  7.4  8.8
+\end{verbatim}
+
+\hypertarget{using-t.test-for-checking-if-mean-can-be-7}{%
+\subsection{Using t.test for checking if mean can be
+7}\label{using-t.test-for-checking-if-mean-can-be-7}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb, }\AttributeTok{mu=}\FloatTok{7.0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  mov$IMDb
+## t = -5.1864, df = 937, p-value = 2.628e-07
+## alternative hypothesis: true mean is not equal to 7
+## 95 percent confidence interval:
+##  6.829538 6.923128
+## sample estimates:
+## mean of x 
+##  6.876333
+\end{verbatim}
+
+\textbf{As p-value\textless0.05, it's unlikely that true mean is 7}
+
+\textbf{Null hypothesis is rejected}
+
+\hypertarget{using-t.test-checking-if-mean-is-7-with-a-confidence-level-of-99}{%
+\subsection{Using t.test checking if mean is 7 with a confidence level
+of
+99\%}\label{using-t.test-checking-if-mean-is-7-with-a-confidence-level-of-99}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{t.test}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb,}\AttributeTok{conf.level =} \FloatTok{0.99}\NormalTok{, }\AttributeTok{mu=}\FloatTok{7.0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  One Sample t-test
+## 
+## data:  mov$IMDb
+## t = -5.1864, df = 937, p-value = 2.628e-07
+## alternative hypothesis: true mean is not equal to 7
+## 99 percent confidence interval:
+##  6.814788 6.937878
+## sample estimates:
+## mean of x 
+##  6.876333
+\end{verbatim}
+
+\textbf{p-value is very small so it is very unlikely that mean is 7}
+
+\textbf{Null hypothesis is rejected}
+
+\hypertarget{calculating-confidence-interval-for-median-of-imdb-using-wilcox-test}{%
+\subsection{Calculating confidence interval for median of IMDb using
+Wilcox
+test}\label{calculating-confidence-interval-for-median-of-imdb-using-wilcox-test}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{wilcox.test}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb,}\AttributeTok{conf.int =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Wilcoxon signed rank test with continuity correction
+## 
+## data:  mov$IMDb
+## V = 440391, p-value < 2.2e-16
+## alternative hypothesis: true location is not equal to 0
+## 95 percent confidence interval:
+##  6.849951 6.900019
+## sample estimates:
+## (pseudo)median 
+##       6.850063
+\end{verbatim}
+
+\hypertarget{checking-if-correlation-between-imdb-and-runtime-is-significant.}{%
+\subsection{Checking if correlation between IMDb and Runtime is
+significant.}\label{checking-if-correlation-between-imdb-and-runtime-is-significant.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor.test}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{IMDb,mov}\SpecialCharTok{$}\NormalTok{Runtime)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's product-moment correlation
+## 
+## data:  mov$IMDb and mov$Runtime
+## t = 7.3629, df = 936, p-value = 3.941e-13
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  0.1725578 0.2935962
+## sample estimates:
+##       cor 
+## 0.2339834
+\end{verbatim}
+
+\textbf{p-value\textless0.05 so a significant correlation exist}
+
+\hypertarget{visual}{%
+\section{\texorpdfstring{\textbf{Visualizing the
+Data}}{Visualizing the Data}}\label{visual}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{uni}{%
+\subsection{Univariate analysis}\label{uni}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(mov}\SpecialCharTok{$}\NormalTok{Year, }\AttributeTok{main=}\StringTok{"Distribution by Year"}\NormalTok{, }\AttributeTok{xlab =} \StringTok{"Year"}\NormalTok{, }\AttributeTok{col =} \StringTok{"blue"}\NormalTok{)  }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{mov,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year)) }\SpecialCharTok{+} \FunctionTok{geom\_freqpoly}\NormalTok{(}\AttributeTok{bins=}\DecValTok{30}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-13-2.pdf}
+
+\textbf{This shows most of the movies are released in 2015 to 2020.}
+
+\hypertarget{bi}{%
+\subsection{bivariate analysis}\label{bi}}
+
+\emph{scatter plot for bivariate analysis how does one variable change
+wrt another}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{mov,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year, }\AttributeTok{y=}\NormalTok{IMDb,}\AttributeTok{col=}\NormalTok{IMDb)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-14-1.pdf}
+
+\textbf{This shows high IMDb scored movies are released in last
+2019-2020}
+
+\hypertarget{smooth}{%
+\subsection{Smooth-Line}\label{smooth}}
+
+\emph{smooth-line for checking how does one continuous variable change
+wrt another continuous variable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{  g1}\OtherTok{\textless{}{-}}\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{mov,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Year,}\AttributeTok{y=}\NormalTok{Runtime)) }\SpecialCharTok{+}\FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+} \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method=}\StringTok{"lm"}\NormalTok{) }\CommentTok{\#lm is linear{-}model}
+\NormalTok{  g1}\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.background =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{fill=}\StringTok{"pink"}\NormalTok{),}\AttributeTok{plot.title=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{hjust=}\FloatTok{0.5}\NormalTok{,}\AttributeTok{face=}\StringTok{"bold"}\NormalTok{,}\AttributeTok{color=}\StringTok{"cadetblue"}\NormalTok{)) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Year vs Runtime"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-15-1.pdf}
+
+\textbf{This shows from previous year, now the released movies duration
+has decreased to 100-120 mins.}
+
+\hypertarget{box}{%
+\subsection{Boxplot}\label{box}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(}\AttributeTok{data=}\NormalTok{mov,}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\FunctionTok{factor}\NormalTok{(IMDb),}\AttributeTok{y=}\NormalTok{Year, }\AttributeTok{fill=}\FunctionTok{factor}\NormalTok{(IMDb))) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-16-1.pdf}
+
+\textbf{This shows that the most liked movies are released in the
+1980-2000 time period}
+
+\hypertarget{conclusion}{%
+\section{\texorpdfstring{\textbf{Conclusions from the
+Graphs}}{Conclusions from the Graphs}}\label{conclusion}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{q1}{%
+\subsection{\texorpdfstring{\emph{Question 1: Which release years had
+the most number of movies
+shot?}}{Question 1: Which release years had the most number of movies shot?}}\label{q1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{popular\_by\_year }\OtherTok{\textless{}{-}}\NormalTok{ mov }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Year) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{Number\_of\_movies =} \FunctionTok{n\_distinct}\NormalTok{(Title)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Number\_of\_movies }\SpecialCharTok{\textgreater{}} \DecValTok{5}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(Number\_of\_movies))}
+\NormalTok{popular\_by\_year}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 25 x 2
+##     Year Number_of_movies
+##    <int>            <int>
+##  1  2018              143
+##  2  2017              140
+##  3  2016               96
+##  4  2019               91
+##  5  2015               57
+##  6  2014               53
+##  7  2010               36
+##  8  2013               34
+##  9  2011               27
+## 10  2009               23
+## # ... with 15 more rows
+\end{verbatim}
+
+\hypertarget{this-can-be-easily-understood-if-it-is-visualized.}{%
+\subsection{This can be easily understood if it is
+visualized.}\label{this-can-be-easily-understood-if-it-is-visualized.}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{popular\_by\_year }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Year, }\AttributeTok{y =}\NormalTok{ Number\_of\_movies)) }\SpecialCharTok{+}
+  
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \StringTok{"\#18BC9C"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{ Number\_of\_movies), }\AttributeTok{vjust =} \DecValTok{0}\NormalTok{ ) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Number of movies shot by release year"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Release Year"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Number of Movies"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-18-1.pdf}
+
+\hypertarget{in-2018-most-of-the-movies-were-shot.}{%
+\subsubsection{\texorpdfstring{\textbf{In 2018 most of the movies were
+shot.}}{In 2018 most of the movies were shot.}}\label{in-2018-most-of-the-movies-were-shot.}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{q2}{%
+\subsection{Question 2: Which are the most famous locations to shoot a
+movie?}\label{q2}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{popular\_locations }\OtherTok{\textless{}{-}}\NormalTok{ mov }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{group\_by}\NormalTok{(Country) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{summarize}\NormalTok{(}\AttributeTok{Number\_of\_movies =} \FunctionTok{n\_distinct}\NormalTok{(Title)) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{filter}\NormalTok{(Number\_of\_movies }\SpecialCharTok{\textgreater{}} \DecValTok{5}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{filter}\NormalTok{(Number\_of\_movies }\SpecialCharTok{\textless{}} \DecValTok{54}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}  
+\FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(Number\_of\_movies))}
+\NormalTok{popular\_locations}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 11 x 2
+##    Country                      Number_of_movies
+##    <chr>                                   <int>
+##  1 United Kingdom                             27
+##  2 United Kingdom,United States               25
+##  3 Canada                                     20
+##  4 Australia                                  13
+##  5 United States,United Kingdom               13
+##  6 Spain                                      12
+##  7 Japan                                      11
+##  8 Germany,United States                       9
+##  9 Canada,United States                        8
+## 10 France                                      8
+## 11 United States,Canada                        7
+\end{verbatim}
+
+\hypertarget{visualizing-this}{%
+\subsection{Visualizing this\ldots{}}\label{visualizing-this}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{popular\_locations }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{reorder}\NormalTok{(Country, }\SpecialCharTok{{-}}\NormalTok{Number\_of\_movies), }\AttributeTok{y =}\NormalTok{ Number\_of\_movies )) }\SpecialCharTok{+} 
+
+\FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \StringTok{"\#C40003"}\NormalTok{ ) }\SpecialCharTok{+}
+\FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{ Number\_of\_movies), }\AttributeTok{hjust =} \DecValTok{0}\NormalTok{ ) }\SpecialCharTok{+}
+\FunctionTok{labs}\NormalTok{ (}
+  \AttributeTok{title =} \StringTok{"Country vs Number of movies"}\NormalTok{,}
+  \AttributeTok{y =} \StringTok{"Number of Movies"}
+\NormalTok{) }\SpecialCharTok{+}
+\FunctionTok{coord\_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-20-1.pdf}
+
+\hypertarget{most-movies-were-shot-in-united-kingdom.}{%
+\subsubsection{\texorpdfstring{\textbf{Most Movies were shot in United
+Kingdom.}}{Most Movies were shot in United Kingdom.}}\label{most-movies-were-shot-in-united-kingdom.}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{q3}{%
+\subsection{Question 3: Which directors shot the most number of
+movies?}\label{q3}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{directors }\OtherTok{\textless{}{-}}\NormalTok{ mov }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{group\_by}\NormalTok{(Directors) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{summarize}\NormalTok{(}\AttributeTok{Number\_of\_movies =} \FunctionTok{n\_distinct}\NormalTok{(Title)) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{filter}\NormalTok{(Number\_of\_movies }\SpecialCharTok{\textgreater{}} \DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+\FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(Number\_of\_movies))}
+\NormalTok{directors}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 2
+##   Directors                      Number_of_movies
+##   <chr>                                     <int>
+## 1 Steven Spielberg                              7
+## 2 Jay Roach                                     5
+## 3 Noah Baumbach                                 5
+## 4 Robert Zemeckis                               5
+## 5 Jeremy Saulnier                               4
+## 6 Lana Wachowski,Lilly Wachowski                4
+\end{verbatim}
+
+\hypertarget{visualizing-this-1}{%
+\subsection{Visualizing this \ldots{}}\label{visualizing-this-1}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{directors }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Directors, }\AttributeTok{y =}\NormalTok{ Number\_of\_movies )) }\SpecialCharTok{+}
+  
+  \FunctionTok{geom\_col}\NormalTok{(}\AttributeTok{fill =} \StringTok{"\#0055AA"}\NormalTok{ ) }\SpecialCharTok{+}
+    \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label=}\NormalTok{ Number\_of\_movies), }\AttributeTok{vjust =} \DecValTok{0}\NormalTok{ ) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{ (}
+    \AttributeTok{title =} \StringTok{"Number of Movies vs Directors"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Number of Movies"}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-22-1.pdf}
+
+\hypertarget{clearly-steven-spielberg-released-most-number-of-movies.}{%
+\subsubsection{\texorpdfstring{\textbf{Clearly Steven Spielberg released
+most number of
+Movies.}}{Clearly Steven Spielberg released most number of Movies.}}\label{clearly-steven-spielberg-released-most-number-of-movies.}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{q4}{%
+\subsection{Ques4 Who are the top ten directors with best movie
+?}\label{q4}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{best\_director}\OtherTok{\textless{}{-}}\NormalTok{mov}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Directors)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean=} \FunctionTok{mean}\NormalTok{(IMDb))}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{top\_n}\NormalTok{(}\DecValTok{10}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mean))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by mean
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{best\_director}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 12 x 2
+##    Directors                                    mean
+##    <chr>                                       <dbl>
+##  1 Christopher Nolan                            8.8 
+##  2 Sergio Leone                                 8.65
+##  3 Anthony Russo,Joe Russo                      8.5 
+##  4 Asif Kapadia                                 8.5 
+##  5 Roman Polanski                               8.5 
+##  6 Stan Lathan                                  8.5 
+##  7 Thom Zimny                                   8.5 
+##  8 Aamir Khan,Amole Gupte                       8.4 
+##  9 Bob Persichetti,Peter Ramsey,Rodney Rothman  8.4 
+## 10 Evgeny Afineevsky                            8.4 
+## 11 Nitesh Tiwari                                8.4 
+## 12 Sam Dunn,Scot McFadyen                       8.4
+\end{verbatim}
+
+\#\#plot the top 10 directors with their average score for better
+visualization
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(best\_director, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Directors, }\AttributeTok{y =}\NormalTok{ mean, }\AttributeTok{alpha =}\NormalTok{ mean))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{,}\AttributeTok{fill =} \StringTok{"slateblue"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Best 10 Directors"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Average Imdb Score"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Top 10 directors with average score"}\NormalTok{)}\SpecialCharTok{+}\FunctionTok{coord\_flip}\NormalTok{(}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\FloatTok{8.75}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-24-1.pdf}
+
+\hypertarget{from-the-previous-graph-we-can-see-most-movies-were-directed-by-steven-spielberg-but-from-this-graph-we-can-conclude-that-the-best-rated-movies-were-directed-by-christopher-nolan}{%
+\subsubsection{\texorpdfstring{\textbf{From the previous graph we can
+see most movies were directed by Steven Spielberg but from this graph we
+can conclude that the best rated movies were directed by Christopher
+Nolan}}{From the previous graph we can see most movies were directed by Steven Spielberg but from this graph we can conclude that the best rated movies were directed by Christopher Nolan}}\label{from-the-previous-graph-we-can-see-most-movies-were-directed-by-steven-spielberg-but-from-this-graph-we-can-conclude-that-the-best-rated-movies-were-directed-by-christopher-nolan}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{q5}{%
+\subsection{Ques5 What are the Most Liked Genre among
+Movies?}\label{q5}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{best\_category}\OtherTok{\textless{}{-}}\NormalTok{mov}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Genres)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{mean=} \FunctionTok{mean}\NormalTok{(IMDb))}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{top\_n}\NormalTok{(}\DecValTok{5}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(mean))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by mean
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{best\_category}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 5 x 2
+##   Genres                                    mean
+##   <chr>                                    <dbl>
+## 1 Western                                   8.65
+## 2 Biography,Drama,Music,War                 8.5 
+## 3 Animation,Action,Adventure,Family,Sci-Fi  8.4 
+## 4 Adventure,Drama,War                       8.3 
+## 5 Crime,Drama,Mystery                       8.3
+\end{verbatim}
+
+\hypertarget{plot}{%
+\subsection{plot}\label{plot}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(best\_category, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Genres, }\AttributeTok{y =}\NormalTok{ mean, }\AttributeTok{alpha =}\NormalTok{ mean))}\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{,}\AttributeTok{fill =} \StringTok{"slateblue"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Top movie genre"}\NormalTok{, }\AttributeTok{y =} \StringTok{"Average Imdb Score"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Top movie genre with average score"}\NormalTok{)}\SpecialCharTok{+}\FunctionTok{coord\_flip}\NormalTok{(}\AttributeTok{ylim=}\FunctionTok{c}\NormalTok{(}\FloatTok{8.3}\NormalTok{,}\FloatTok{8.6}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{movie_files/figure-latex/unnamed-chunk-26-1.pdf}
+
+\hypertarget{so-as-we-can-see-western-movies-are-mostly-liked-by-the-audience.}{%
+\subsubsection{\texorpdfstring{\textbf{So as we can see Western movies
+are mostly liked by the
+audience.}}{So as we can see Western movies are mostly liked by the audience.}}\label{so-as-we-can-see-western-movies-are-mostly-liked-by-the-audience.}}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\end{document}

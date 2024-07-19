@@ -1,1 +1,2 @@
-# movie_analysis_R
+# movie_analysis
+Data for analysing movies in Data Science
